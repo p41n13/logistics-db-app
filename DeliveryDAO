@@ -1,0 +1,4 @@
+<mapping class="com.logistics.Base"/>
+<mapping class="com.logistics.Drivers"/>
+<mapping class="com.logistics.Operators"/>
+<mapping class="com.logistics.Delivery"/>
