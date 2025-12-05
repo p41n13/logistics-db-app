@@ -1,48 +1,78 @@
 package com.logistics;
 
 import javax.persistence.*;
-import java.time.LocalTime;
 
 @Entity
 @Table(name = "operators")
 public class Operators {
+
     @Id
-    @Column(name = "operator_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "operator_id")
     private int operatorId;
 
-    @ManyToOne
-    @JoinColumn(name = "first_name")
-    private Base firstName;
+    @Column(name = "last_name", length = 100)
+    private String lastName;
 
-    @ManyToOne
-    @JoinColumn(name = "middle_name")
-    private Teacher middleName;
+    @Column(name = "first_name", length = 100)
+    private String firstName;
 
-    @ManyToOne
-    @JoinColumn(name = "experience")
-    private Delivery experience;
+    @Column(name = "middle_name", length = 100)
+    private String middleName;
 
-    private String semester;
-    private int year;
+    @Column(name = "experience")
+    private int experience;
 
     @Column(name = "base_id")
-    private LocalTime baseId;
+    private int baseId;
 
     // Getters and Setters
-    public int getOperator_id() {
+
+    public int getOperatorId() {
         return operatorId;
     }
 
-    public void setFirstName(int firstName) {
+    public void setOperatorId(int operatorId) {
+        this.operatorId = operatorId;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public Base middleName() {
+    public String getMiddleName() {
         return middleName;
     }
 
-    public void setExperience(Base experience) {
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
         this.experience = experience;
+    }
+
+    public int getBaseId() {
+        return baseId;
+    }
+
+    public void setBaseId(int baseId) {
+        this.baseId = baseId;
     }
 }
