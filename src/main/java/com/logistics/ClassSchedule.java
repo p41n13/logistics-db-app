@@ -1,4 +1,4 @@
-package com.warehouse;
+package com.logistics;
 
 import javax.persistence.*;
 import java.time.LocalTime;

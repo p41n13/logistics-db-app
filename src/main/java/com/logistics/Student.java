@@ -1,14 +1,14 @@
-package com.warehouse;
+package com.logistics;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "teachers")
-public class Teacher {
+@Table(name = "students")
+public class Student {
     @Id
-    @Column(name = "teacher_id")
+    @Column(name = "student_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int teacherId;
+    private int studentId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -18,15 +18,15 @@ public class Teacher {
 
     @ManyToOne
     @JoinColumn(name = "department_id")
-    private Department department;
+    private Drivers department;
 
     // Getters and Setters
-    public int getTeacherId() {
-        return teacherId;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setTeacherId(int teacherId) {
-        this.teacherId = teacherId;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
     public String getFirstName() {
@@ -45,11 +45,11 @@ public class Teacher {
         this.lastName = lastName;
     }
 
-    public Department getDepartment() {
+    public Drivers getDepartment() {
         return department;
     }
 
-    public void setDepartment(Department department) {
+    public void setDepartment(Drivers department) {
         this.department = department;
     }
 }

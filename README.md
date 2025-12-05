@@ -1,9 +1,9 @@
 # Кроки для виконання
 1. Встановіть локально PostgreSQL, Maven та Java.
-1. Створіть базу даних warehouse_db.
+1. Створіть базу даних logistics_db.
 1. Вкажіть правильне значення властивості `hibernate.connection.password` у файлі "src\main\resources\hibernate.cfg.xml".
 1. Зберіть програму за допомогою команди: `mvn clean install`.
-1. Запустіть програму за допомогою команди: `mvn exec:java -D"exec.mainClass=com.warehouse.MainApp"`.
+1. Запустіть програму за допомогою команди: `mvn exec:java -D"exec.mainClass=com.logistics.MainApp"`.
 1. Якщо термінал відображає знаки питання "?" замість українських символів, зконфігуруйте термінал на відображення шрифту в форматі UTF-8 виконавши команду `chcp 65001`.
 
 # Результати виконання програми
@@ -19,7 +19,7 @@ WARN: HHH000022: c3p0 properties were encountered, but the c3p0 provider class w
 Oct 31, 2025 12:49:48 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 Oct 31, 2025 12:49:48 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/warehouse_db]
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/logistics_db]
 Oct 31, 2025 12:49:48 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {user=postgres, password=****}
 Oct 31, 2025 12:49:48 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
@@ -423,5 +423,5 @@ Hibernate:
 Час закінчення: 12:30
 --------------------------------------------------
 Oct 31, 2025 12:49:51 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
-INFO: HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/warehouse_db]
+INFO: HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/logistics_db]
 ```

@@ -1,10 +1,10 @@
-package com.warehouse;
+package com.logistics;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "departments")
-public class Department {
+@Table(name = "drivers")
+public class Drivers {
     @Id
     @Column(name = "department_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

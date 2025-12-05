@@ -6,7 +6,7 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/warehouse_db</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/logistics_db</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
 
@@ -28,12 +28,12 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- List of annotated entity classes -->
-        <mapping class="com.warehouse.Department"/>
-        <mapping class="com.warehouse.Teacher"/>
-        <mapping class="com.warehouse.Student"/>
-        <mapping class="com.warehouse.Course"/>
-        <mapping class="com.warehouse.Room"/>
-        <mapping class="com.warehouse.ClassSchedule"/>
-        <mapping class="com.warehouse.Enrollment"/>
+        <mapping class="com.logistics.Department"/>
+        <mapping class="com.logistics.Teacher"/>
+        <mapping class="com.logistics.Student"/>
+        <mapping class="com.logistics.Course"/>
+        <mapping class="com.logistics.Room"/>
+        <mapping class="com.logistics.ClassSchedule"/>
+        <mapping class="com.logistics.Enrollment"/>
     </session-factory>
 </hibernate-configuration>

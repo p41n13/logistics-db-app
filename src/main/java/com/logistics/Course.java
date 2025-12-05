@@ -1,4 +1,4 @@
-package com.warehouse;
+package com.logistics;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class Course {
 
     @ManyToOne
     @JoinColumn(name = "department_id")
-    private Department department;
+    private Drivers department;
 
     @OneToMany(mappedBy = "course")
     private List<ClassSchedule> classSchedules;
@@ -48,11 +48,11 @@ public class Course {
         this.credits = credits;
     }
 
-    public Department getDepartment() {
+    public Drivers getDepartment() {
         return department;
     }
 
-    public void setDepartment(Department department) {
+    public void setDepartment(Drivers department) {
         this.department = department;
     }
 

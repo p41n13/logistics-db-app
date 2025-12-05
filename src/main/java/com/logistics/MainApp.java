@@ -1,4 +1,4 @@
-package com.warehouse;
+package com.logistics;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,7 +19,7 @@ import java.util.List;
  * 
  * <p>Клас використовує наступні Entity класи таблиць бази даних:
  * <ul>
- *   <li>{@link Department}</li>
+ *   <li>{@link Drivers}</li>
  *   <li>{@link Teacher}</li>
  *   <li>{@link Student}</li>
  *   <li>{@link Course}</li>
@@ -33,7 +33,7 @@ import java.util.List;
  * 
  * <p>Для запуску програми необхідно мати налаштований файл конфігурації Hibernate (hibernate.cfg.xml).</p>
  * 
- * @see Department
+ * @see Drivers
  * @see Teacher
  * @see Student
  * @see Course
@@ -47,7 +47,7 @@ public class MainApp {
         // Створення фабрики сесій Hibernate
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Department.class)
+                .addAnnotatedClass(Drivers.class)
                 .addAnnotatedClass(Teacher.class)
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Course.class)
@@ -62,11 +62,11 @@ public class MainApp {
             session.beginTransaction();
 
             // Додавання даних в Departments
-            Department dept1 = new Department();
+            Drivers dept1 = new Drivers();
             dept1.setName("Комп`ютерні науки");
             dept1.setLocation("Корпус A");
 
-            Department dept2 = new Department();
+            Drivers dept2 = new Drivers();
             dept2.setName("Математика");
             dept2.setLocation("Корпус B");
 
@@ -216,7 +216,7 @@ public class MainApp {
             session.beginTransaction();
 
             // Виконання запиту
-            String hql = "SELECT new com.warehouse.ScheduleInfoDTO(" +
+            String hql = "SELECT new com.logistics.ScheduleInfoDTO(" +
                     "s.firstName, s.lastName, " +
                     "t.firstName, t.lastName, " +
                     "c.courseName, d.name, " +
