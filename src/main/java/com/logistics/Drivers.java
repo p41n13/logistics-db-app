@@ -6,38 +6,40 @@ import javax.persistence.*;
 @Table(name = "drivers")
 public class Drivers {
     @Id
-    @Column(name = "department_id")
+    @Column(name = "driver_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int departmentId;
+    private int driverId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "last_name")
+    private String lastName;
 
-    @Column(name = "location")
-    private String location;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "middle_name")
+    private String middleName;
+
+    @Column(name = "transport_type")
+    private String transportType;
 
     // Getters and Setters
-    public int getDepartmentId() {
-        return departmentId;
+    public int getDriverId() {
+        return drivertId;
     }
 
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
+    public void setLastName(int lastName) {
+        this.lastName = lastName;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public String getTransportType(String transportType) {
+        return transportType;
     }
 }
