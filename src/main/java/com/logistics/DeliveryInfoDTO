@@ -1,0 +1,29 @@
+package com.logistics;
+
+public class DeliveryInfoDTO {
+    public String operatorName;
+    public String driverName;
+    public String operationDate;
+    public String orderId;
+    public String itemList;
+    public String deliveryRoute;
+    public String transportType;
+    public int experience;
+    public String baseAddress;
+    public String basePhone;
+
+    public DeliveryInfoDTO(String operatorName, String driverName, String operationDate,
+                           String orderId, String itemList, String deliveryRoute,
+                           String transportType, int experience, String baseAddress, String basePhone) {
+        this.operatorName = operatorName;
+        this.driverName = driverName;
+        this.operationDate = operationDate;
+        this.orderId = orderId;
+        this.itemList = itemList;
+        this.deliveryRoute = deliveryRoute;
+        this.transportType = transportType;
+        this.experience = experience;
+        this.baseAddress = baseAddress;
+        this.basePhone = basePhone;
+    }
+}
