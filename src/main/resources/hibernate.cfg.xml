@@ -1,39 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
-    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
     <session-factory>
+
         <!-- JDBC Database connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/logistics_db</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
 
-        <!-- JDBC connection pool settings -->
-        <property name="hibernate.c3p0.min_size">5</property>
-        <property name="hibernate.c3p0.max_size">20</property>
-
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
-        <!-- Echo all executed SQL to stdout -->
+        <!-- Echo executed SQL -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
-        <!-- Drop and re-create the database schema on startup -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <!-- НЕ ВИДАЛЯЄ таблиці щоразу -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- Configure the current session context -->
-        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- Annotated entity classes -->
+        <mapping class="com.logistics.Base"/>
+        <mapping class="com.logistics.Drivers"/>
+        <mapping class="com.logistics.Operators"/>
+        <mapping class="com.logistics.Delivery"/>
 
-        <!-- List of annotated entity classes -->
-        <mapping class="com.logistics.Department"/>
-        <mapping class="com.logistics.Teacher"/>
-        <mapping class="com.logistics.Student"/>
-        <mapping class="com.logistics.Course"/>
-        <mapping class="com.logistics.Room"/>
-        <mapping class="com.logistics.ClassSchedule"/>
-        <mapping class="com.logistics.Enrollment"/>
     </session-factory>
 </hibernate-configuration>
